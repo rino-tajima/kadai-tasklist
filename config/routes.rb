@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/destroy'
-  resources :tasks
+    
     root to: 'tasks#index'
+    resources :tasks
   
   #ログイン機能のルート 
   get 'login', to: 'sessions#new'
@@ -13,4 +11,7 @@ Rails.application.routes.draw do
    #ユーザ機能のルート 
     get 'signup', to: 'users#new' 
     resources :users, only: [:index, :show, :create]
+    
+    #一対多のルート
+    resources :tasks, only: [:create, :destroy]
 end
