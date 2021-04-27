@@ -10,8 +10,5 @@ class ApplicationController < ActionController::Base
     end
   end
   
-  #一対多
-  def counts(user)
-    @count_tasks = user.tasks.count
-  end
+  
 end

@@ -10,8 +10,8 @@ Rails.application.routes.draw do
    
    #ユーザ機能のルート 
     get 'signup', to: 'users#new' 
-    resources :users, only: [:index, :show, :create]
+    resources :users, only: [:index, :new]
     
     #一対多のルート
-    resources :tasks, only: [:create, :destroy]
+    resources :tasks
 end
